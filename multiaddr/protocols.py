@@ -172,8 +172,8 @@ PROTOCOLS = [
     Protocol(P_UNIX, LENGTH_PREFIXED_VAR_SIZE, 'unix', code_to_varint(P_UNIX)),
 ]
 
-_names_to_protocols = dict((proto.name, proto) for proto in PROTOCOLS)
-_codes_to_protocols = dict((proto.code, proto) for proto in PROTOCOLS)
+_names_to_protocols = {proto.name: proto for proto in PROTOCOLS}
+_codes_to_protocols = {proto.code: proto for proto in PROTOCOLS}
 
 
 def add_protocol(proto):
